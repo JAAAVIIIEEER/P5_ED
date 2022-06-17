@@ -113,30 +113,34 @@ public class BinarySearchTreeTests {
 			other.filterTags("height");
 			Assert.assertEquals("{10, {5, {2 [(height, 3)],"+" ∅, ∅}, ∅}, {20, {15, {12 [(height, 4)],"+" ∅, ∅}, ∅}, ∅}}",other.toString());
 		}
-				
-				
-		@Test(expected = IllegalArgumentException.class)
-		public void testInsertException() {
-			Integer i = null;
-			other.insert(i);	
-		}
-		
-	
-		@Test(expected = IllegalArgumentException.class)
-		public void testContainsNull() {
-			other.contains(null);
-		}
-		
-		@Test(expected = IllegalArgumentException.class)
-		public void testRemoveNullElement() {
-			Integer i = null;
-			other.remove(i);
-		}
-		
-		@Test(expected = NoSuchElementException.class)
-		public void testRemoveNoSuchElement() {
-			other.remove(11);
-		}
+	@Test(expected = IllegalArgumentException.class)
+	public void testInsertException() {
+		Integer i = null;
+		other.insert(i);	
 	}
+	
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testContainsNull() {
+		other.contains(null);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testRemoveNullElement() {
+		Integer i = null;
+		other.remove(i);
+	}
+	
+	@Test(expected = NoSuchElementException.class)
+	public void testRemoveNoSuchElement() {
+		other.remove(11);
+	}			
+		
+	@Test
+	public void testInsert() {
+		ejemplo.insert(20);
+		Assert.assertEquals("{10, {5, {2, ∅, ∅}, ∅}, {20(2), {15, ∅, ∅}, {30, ∅, ∅}}}", ejemplo.toString());
+	}
+}
 
 
